@@ -14,14 +14,16 @@
     <p>N° Orden  <span id="ordencompra"></span></p>
     <p>Tipo Pago  <span id="tipopago"></span></p>   
     <script>
-        /* Obtenemos los datos almacenados */
-        let result = JSON.parse(window.localStorage.getItem("result"));
-        document.getElementById('precio').innerText = result.detailOutput.amount;
-        document.getElementById('codigoautorizacion').innerText = result.detailOutput.authorizationCode;
-        document.getElementById('numerotarjeta').innerText = result.cardDetail.cardNumber;
-        document.getElementById('ordencompra').innerText = result.detailOutput.buyOrder;
-        document.getElementById('tipopago').innerText = result.detailOutput.paymentTypeCode;
-        console.log(result.detailOutput.paymentTypeCode);
-    </script>   
+        document.addEventListener("DOMContentLoaded", function(e) {
+            /* Obtenemos los datos almacenados */
+            let result = JSON.parse(window.localStorage.getItem("result"));
+            document.getElementById('precio').innerText = result.detailOutput.amount;
+            document.getElementById('codigoautorizacion').innerText = result.detailOutput.authorizationCode;
+            document.getElementById('numerotarjeta').innerText = result.cardDetail.cardNumber;
+            document.getElementById('ordencompra').innerText = result.detailOutput.buyOrder;
+            document.getElementById('tipopago').innerText = result.detailOutput.paymentTypeCode;
+            console.log(result.detailOutput.paymentTypeCode);
+        });
+    </script>
 </body>
 </html>
